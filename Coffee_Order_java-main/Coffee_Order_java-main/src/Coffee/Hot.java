@@ -39,7 +39,6 @@ public class Hot {
 
 
 public void doHot() { 
-	
 // Hotpn에 생성할 이미지 버튼들을 설정
 JButton HotButton_아메리카노 = new JButton("");
 HotButton_아메리카노.setIcon(new ImageIcon("images/아메리카노.jfif"));

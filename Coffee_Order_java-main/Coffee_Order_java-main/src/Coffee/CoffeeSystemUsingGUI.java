@@ -135,12 +135,9 @@ public class CoffeeSystemUsingGUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				 JButton srcBtn =(JButton)e.getSource();
-	                if(srcBtn==bt[0]) {
-	                	fr.add(hot.getHotpn());// Hotpn 패널 추가
-	                	hot.doHot();
-	                
-			}
+				  bt[0] =(JButton)e.getSource();
+	                	fr.add(hot.getHotpn());//얘가 안되는듯
+	                	hot.doHot();	//얘는 되는데		
 	     }
             
        
