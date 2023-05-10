@@ -1,3 +1,4 @@
+package Coffee;
 import java.awt.Image;
 import java.util.Vector;
 

@@ -1,3 +1,4 @@
+package Coffee;
 public class Menu {
 
 	String product_name;

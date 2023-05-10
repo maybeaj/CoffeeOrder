@@ -1,3 +1,4 @@
+package Coffee;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -15,6 +16,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import Coffee.Hot;
 
 public class CoffeeSystemUsingGUI {
    
@@ -43,25 +45,27 @@ public class CoffeeSystemUsingGUI {
       // 이미지 패널 그리기
         ImagePanel pn =new ImagePanel(new ImageIcon("images/검정배경.jpg").getImage());
         fr.pack();
-        fr.add(pn);
-        JPanel Hotpn = new JPanel();
+        fr.add(pn);       
+        
         JPanel Icepn = new JPanel();
         JPanel Adepn = new JPanel();
         JPanel Dstpn = new JPanel(); // 디저트 메뉴를 띄우는 패널
         JPanel Orderpn = new JPanel();
-        
+        Hot hot = new Hot();// Hot 클래스 생성
+       
+      
         //주문내역
         JTextArea ordertxt = new JTextArea(); 
-       
-
-        //주문내역을 확인할수있는 텍스트 필드를 붙이고, 내용추가
-        pn.add(ordertxt);     
-        ordertxt.append("\n                      장바구니 \n\n\n");
-        ordertxt.setBounds(600, 150, 200, 500); // 주문한내역을 볼수있는 txtarea를 생성       
-        ordertxt.setEditable(false);
-        ordertxt.setFont(new Font("G마켓 산스 TTF Medium",Font.BOLD,12));
+      
         
-        //모든주문리스트그거인듯
+        //주문내역을 확인할수있는 텍스트 필드를 붙이고, 내용추가
+         pn.add(ordertxt);  
+         ordertxt.append("\n                      장바구니 \n\n\n");
+         ordertxt.setBounds(600, 150, 200, 500); // 주문한내역을 볼수있는 txtarea를 생성       
+         ordertxt.setFont(new Font("G마켓 산스 TTF Medium",Font.BOLD,12));
+
+        
+        //모든주문리스트그거인듯-order누르면나오는거
         JTextArea listtxt = new JTextArea();
         listtxt.setBounds(0,0, 1000, 600);
         listtxt.setFont(new Font("G마켓 산스 TTF Light",Font.BOLD,20));
@@ -128,90 +132,23 @@ public class CoffeeSystemUsingGUI {
         
         //버튼 0번의 기능설정
         bt[0].addActionListener(new ActionListener () {
-            
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               JButton srcBtn =(JButton)e.getSource();
-                if(srcBtn==bt[0]) {
-                   doHot();
-                   
-                   //hotpn 의 크기 및 색상
-                   Hotpn.setLayout(null);
-                Hotpn.setBounds(0, 150, 800, 500);
-                Hotpn.setBackground(Color.white);
-                   
-                //hotpn 누를시, 나머지 패널을 보이지 않게하기
-                   Hotpn.setVisible(true);
-                   Icepn.setVisible(false);      
-                   Adepn.setVisible(false);
-                   Dstpn.setVisible(false);
-                   Orderpn.setVisible(false);
-                   ordertxt.setVisible(true);
-                
-                   table.setVisible(false);
-                   order_bt.setVisible(true);
-                }
-            }
 
-         private void doHot() {   
-            // Hotpn에 생성할 이지지 버튼들을 설정
-            JButton HotButton_아메리카노 = new JButton("");
-            fr.add(Hotpn);
-            HotButton_아메리카노.setIcon(new ImageIcon("images/아메리카노.jfif"));
-            Hotpn.add(HotButton_아메리카노);
-            HotButton_아메리카노.setBounds(20, 20, 150,200);
-            //메뉴이름 띄어줄 텍스트 필드 생성
-            JTextField hot_아메리카노 = new JTextField("(HOT)아메리카노  1500원"); 
-            Hotpn.add(hot_아메리카노);
-            hot_아메리카노.setBounds(20,220,150,20);
-            hot_아메리카노.setEditable(false);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 JButton srcBtn =(JButton)e.getSource();
+	                if(srcBtn==bt[0]) {
+	                	fr.add(hot.getHotpn());// Hotpn 패널 추가
+	                	hot.doHot();
+	                
+			}
+	     }
             
-            // 아메리카노를 누르면 알림창이 뜨게끔 기능 설정
-            HotButton_아메리카노.addActionListener(new ActionListener () {
-                     
-                     @Override
-                     public void actionPerformed(ActionEvent e) {
-                        JButton srcBtn =(JButton)e.getSource();
-                         if(srcBtn==HotButton_아메리카노) {
-                     int result=   JOptionPane.showConfirmDialog(HotButton_아메리카노, "아메리카노를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
-                            if(result == JOptionPane.OK_OPTION) {
-                               ordertxt.append((CoffeeSystem.hot_drink.get(0).toString()));
-                               CoffeeSystem.order.add(CoffeeSystem.hot_drink.get(0));
-                               CoffeeSystem.new_Price(1500);
-                            }
-                         }
-                     }});
-            
-            JButton HotButton_카푸치노 = new JButton("");
-            HotButton_카푸치노.setIcon(new ImageIcon("../images/카푸치노.JFIF"));
-            Hotpn.add(HotButton_카푸치노);
-            HotButton_카푸치노.setBounds(210, 20, 150, 200);
-            //메뉴이름 띄어줄 텍스트 필드 생성
-            JTextField 카푸치노 = new JTextField("(Hot)카푸치노  2000원"); 
-            Hotpn.add(카푸치노);
-            카푸치노.setBounds(210,220,150,20);
-            카푸치노.setEditable(false);
-            // 카푸치노를 누르면 알림창이 뜨게끔 설정
-            HotButton_카푸치노.addActionListener(new ActionListener () {               
-                  @Override
-                  public void actionPerformed(ActionEvent e) {
-                     JButton srcBtn =(JButton)e.getSource();
-                      if(srcBtn==HotButton_카푸치노) {
-                         int result = JOptionPane.showConfirmDialog(HotButton_카푸치노, "카푸치노를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
-                         if(result == JOptionPane.OK_OPTION) {
-                            ordertxt.append((CoffeeSystem.hot_drink.get(1).toString()));
-                            CoffeeSystem.order.add(CoffeeSystem.hot_drink.get(1));
-                            CoffeeSystem.new_Price(2500);
-                            
-                         }
-                         
-                      }
-                  }});
-         }
+       
 
     }
         
      );
+
         //bt[0] 과 같은 형식임.
         bt[1].addActionListener(new ActionListener () {
            
@@ -225,7 +162,7 @@ public class CoffeeSystemUsingGUI {
                 Icepn.setBounds(0, 150, 800, 500);
                 Icepn.setBackground(Color.gray);
                 
-                   Hotpn.setVisible(false);
+                   //Hotpn.setVisible(false);
                    Icepn.setVisible(true);
                    Adepn.setVisible(false);
                    Dstpn.setVisible(false);
@@ -308,7 +245,7 @@ public class CoffeeSystemUsingGUI {
                Adepn.setLayout(null);
                Adepn.setBounds(0, 150, 800, 500);
                Adepn.setBackground(Color.white);            
-               Hotpn.setVisible(false);
+               //Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
                    Adepn.setVisible(true);
                    Dstpn.setVisible(false);
@@ -385,7 +322,7 @@ public class CoffeeSystemUsingGUI {
                Dstpn.setBounds(0, 150, 800, 500);
                Dstpn.setBackground(Color.white);
                
-               Hotpn.setVisible(false);
+              // Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
                    Adepn.setVisible(false);
                    Dstpn.setVisible(true);
@@ -458,7 +395,7 @@ public class CoffeeSystemUsingGUI {
             JButton srcBtn =(JButton)e.getSource();
             if(srcBtn==bt[4]) {
                
-               Hotpn.setVisible(false);
+               //Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
                    Adepn.setVisible(false);
                    Dstpn.setVisible(false);
@@ -481,7 +418,7 @@ public class CoffeeSystemUsingGUI {
             JButton srcBtn =(JButton)e.getSource();
             if(srcBtn==bt[5]) {
                fr.add(Orderpn);
-               Hotpn.setVisible(false);
+               //Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
                    Adepn.setVisible(false);
                    Dstpn.setVisible(false);
