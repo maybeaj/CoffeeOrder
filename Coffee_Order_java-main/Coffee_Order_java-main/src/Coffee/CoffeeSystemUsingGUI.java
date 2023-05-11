@@ -88,7 +88,7 @@ public class CoffeeSystemUsingGUI {
         // 팔 메뉴들 Vector 객체속에 미리 저장해놓기
         CoffeeSystem.setupMenu(); 
        
-        //메인 버튼 6개 설정
+        //메인 버튼 5개 설정
         bt[0] = new JButton("HOT"); 
         bt[1] = new JButton("ICE"); 
         bt[2] = new JButton("ADE");
@@ -363,13 +363,23 @@ public class CoffeeSystemUsingGUI {
         }});
     
         
-        // 주문리스트 버튼 기능
+        // 주문리스트 버튼 기능 (주문담기버튼이랑 order기능 합침)
         bt[4].addActionListener(new ActionListener() {
 
          @Override
          public void actionPerformed(ActionEvent e) {
             JButton srcBtn =(JButton)e.getSource();
             if(srcBtn==bt[4]) {
+            	int result=JOptionPane.showConfirmDialog(bt[4], "주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+                if(result==JOptionPane.OK_OPTION) {
+                                  
+                   Custmoer_Order();   
+                   // 주문담기 버튼을 누르면 주문내역,총 주문비용 을 모두 지우고 다시 주문문구 생성
+                   ordertxt.setText("");
+                   int sum = 0;
+                   listtxt.append(CoffeeSystem.total_Price(sum));
+                   CoffeeSystem.order.removeAllElements();
+                   CoffeeSystem.price.removeAllElements();
                fr.add(Orderpn);
                //Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
@@ -389,57 +399,29 @@ public class CoffeeSystemUsingGUI {
             }
             
          }
-
-         
+            
            
+        }
+         private void Custmoer_Order() {
+             
+             Menu m;                           
+             listtxt.append("------------------------Order List-------------------------\n\n\n\n");
+                   
+             // 모든 주문리스트를 불러옴
+             for(int i=0; i<CoffeeSystem.getNumOrders(); i++) {
+                m=CoffeeSystem.getOrder(i);
+                listtxt.append(i+1+". ");
+                listtxt.append(m.toString());
+                            
+       }
+             
+          listtxt.append("\n-----------------------------------------------------------------\n");
+       }
+      
+        
         });
         
-        // 주문담기 버튼 추가 및 설정
-        order_bt.setFont(new Font("HY견고딕 보통", Font.PLAIN, 15));
-        order_bt.setBounds(500, 550, 100, 50);
-        pn.add(order_bt); // 주문담기 버튼 생성 및 출력
-        order_bt.addActionListener(new ActionListener() {
 
-         
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            JButton srcBtn =(JButton)e.getSource();
-            if(srcBtn==order_bt) {
-               int result=JOptionPane.showConfirmDialog(order_bt, "주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
-               if(result==JOptionPane.OK_OPTION) {
-                                 
-                  Custmoer_Order();   
-                  // 주문담기 버튼을 누르면 주문내역,총 주문비용 을 모두 지우고 다시 주문문구 생성
-                  ordertxt.setText("");
-                  int sum = 0;
-                  listtxt.append(CoffeeSystem.total_Price(sum));
-                  ordertxt.append("\n\n\n\n           Click Order\n\n");
-                  CoffeeSystem.order.removeAllElements();
-                  CoffeeSystem.price.removeAllElements();
-                     
-               }
-            }
-            
-         }
-         // 주문리스트에 저장할 내용을 설정
-         private void Custmoer_Order() {
-            
-               Menu m;                           
-               listtxt.append("------------------------Order List-------------------------\n\n\n\n");
-                     
-               // 모든 주문리스트를 불러옴
-               for(int i=0; i<CoffeeSystem.getNumOrders(); i++) {
-                  m=CoffeeSystem.getOrder(i);
-                  listtxt.append(i+1+". ");
-                  listtxt.append(m.toString());
-                              
-         }
-               
-            listtxt.append("\n-----------------------------------------------------------------\n");
-         }
-
-           
-        });
                
        
                 
