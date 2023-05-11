@@ -70,37 +70,17 @@ public class CoffeeSystemUsingGUI {
         listtxt.setBounds(0,0, 1000, 600);
         listtxt.setFont(new Font("G마켓 산스 TTF Light",Font.BOLD,20));
         
-        JButton[] bt = new JButton[6];
+        JButton[] bt = new JButton[5];
         JButton order_bt = new JButton("주문담기");
         
-        // 메뉴판 테이블 만들기
-        String [] heading = new String[] {"상품명","가격"};
-        Object[][] data = new Object [][] {
-           {"   상품명","가격"},
-           {"(Hot)아메리카노","1500원"},
-           {"(Hot)카푸치노","2000원"},
-           {"(Ice)아메리카노","2000원"},
-           {"(Ice)카페라떼","2500원"},
-           {"레몬에이드","3000원"},
-           {"자몽에이드","3000원"},
-           {"초코케이크(1조각)","3000원"},
-           {"딸기케이크(1조각)","3500원"}
-           
-        };     
-        //메인메뉴판
-        JTable table = new JTable(data,heading);
-        pn.add(new JScrollPane(table));
-        pn.add(table);
-        table.setBounds(0, 150, 800, 500);
-        table.setFont(new Font("G마켓 산스 TTF Medium",Font.BOLD,14));
-        table.setRowHeight(50);
-        
+    
+    
        
         //버튼들 위치와 크기 설정
-        int width[]= {100,100,100,300,100,100};
-        int height[]= {50,50,50,50,50,50};
-        int x[] = {40,240,440,540,240,440};
-        int y[] = {50,50,50,50,700,700};
+        int width[]= {100,100,100,300,100};
+        int height[]= {50,50,50,50,50};
+        int x[] = {40,240,440,540,440};
+        int y[] = {50,50,50,50,700};
         
         //이미지 패널 크기설정
         pn.setLayout(null);
@@ -113,8 +93,7 @@ public class CoffeeSystemUsingGUI {
         bt[1] = new JButton("ICE"); 
         bt[2] = new JButton("ADE");
         bt[3] = new JButton("DESSERT");
-        bt[4] = new JButton("Main");
-        bt[5] = new JButton("Order");
+        bt[4] = new JButton("Order");
         
         
         
@@ -165,8 +144,7 @@ public class CoffeeSystemUsingGUI {
                    Dstpn.setVisible(false);
                    Orderpn.setVisible(false);
                    ordertxt.setVisible(true);
-               
-                   table.setVisible(false);
+             
                    order_bt.setVisible(true);
                 }
             }
@@ -248,8 +226,7 @@ public class CoffeeSystemUsingGUI {
                    Dstpn.setVisible(false);
                    Orderpn.setVisible(false);
                    ordertxt.setVisible(true);
-               
-                   table.setVisible(false);
+      
                    order_bt.setVisible(true);
             }
          }
@@ -326,7 +303,7 @@ public class CoffeeSystemUsingGUI {
                    Orderpn.setVisible(false);
                    ordertxt.setVisible(true);
                    
-                   table.setVisible(false);
+    
                    order_bt.setVisible(true);
             }
          }
@@ -384,36 +361,15 @@ public class CoffeeSystemUsingGUI {
          });
          
         }});
-        // 메인화면 버튼 기능
+    
+        
+        // 주문리스트 버튼 기능
         bt[4].addActionListener(new ActionListener() {
 
          @Override
          public void actionPerformed(ActionEvent e) {
             JButton srcBtn =(JButton)e.getSource();
             if(srcBtn==bt[4]) {
-               
-               //Hotpn.setVisible(false);
-                   Icepn.setVisible(false);      
-                   Adepn.setVisible(false);
-                   Dstpn.setVisible(false);
-                   Orderpn.setVisible(false);
-                   ordertxt.setVisible(false);
-                   table.setVisible(true);
-                   order_bt.setVisible(false);
-            }
-            
-         }
-
-           
-        });
-        
-        // 주문리스트 버튼 기능
-        bt[5].addActionListener(new ActionListener() {
-
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            JButton srcBtn =(JButton)e.getSource();
-            if(srcBtn==bt[5]) {
                fr.add(Orderpn);
                //Hotpn.setVisible(false);
                    Icepn.setVisible(false);      
@@ -422,7 +378,7 @@ public class CoffeeSystemUsingGUI {
                    Orderpn.setVisible(true);
                ordertxt.setVisible(false);
                
-               table.setVisible(false);
+             
                order_bt.setVisible(false);
                 
                Orderpn.add(listtxt);
