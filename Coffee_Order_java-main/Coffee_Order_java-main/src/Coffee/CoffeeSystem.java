@@ -59,9 +59,9 @@ public class CoffeeSystem {
 		int m;
 		for(int i=0; i<CoffeeSystem.getNumPrices(); i++) {			
 			m=CoffeeSystem.getPrice(i);
-			sum = sum+m;
+			sum = sum + m;
 	}
-		return "총 가격 :"+sum+"원";
+		return "총 가격 :" + sum + "원";
 	}
 	 // 이미지 크기조절하기!
 	 static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
