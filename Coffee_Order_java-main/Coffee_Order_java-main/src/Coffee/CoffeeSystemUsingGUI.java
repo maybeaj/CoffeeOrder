@@ -43,7 +43,7 @@ public class CoffeeSystemUsingGUI {
    public static void main(String[] args) {
       JFrame fr = new JFrame("커피시스템");
         // 이미지 패널 그리기
-        ImagePanel pn =new ImagePanel(new ImageIcon("images/검정배경.jpg").getImage());
+        ImagePanel pn =new ImagePanel(new ImageIcon("images/Back.jpg").getImage());
         fr.pack();
         fr.add(pn);       
         JPanel Hotpn = new JPanel();
@@ -147,7 +147,7 @@ public class CoffeeSystemUsingGUI {
                     
                 Icepn.setLayout(null);
                 Icepn.setBounds(0, 100, 600, 550);
-                Icepn.setBackground(Color.gray);
+                Icepn.setBackground(Color.white);
                 ice.IceAmericano(Icepn, ordertxt);
                 ice.IceCaffeLatte(Icepn, ordertxt);
                 

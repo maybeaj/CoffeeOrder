@@ -13,13 +13,13 @@ import javax.swing.JTextField;
 public class Ade {
 	
 	public void LemonAde(JPanel Adepn,JTextArea ordertxt) {
-		JButton AdeButton_레몬에이드 = new JButton(new ImageIcon("../images/레몬에이드.JFIF"));
+		JButton AdeButton_레몬에이드 = new JButton(new ImageIcon("images/레몬에이드.jpg"));
         Adepn.add(AdeButton_레몬에이드);
-        AdeButton_레몬에이드.setBounds(20, 20, 259,194);
+        AdeButton_레몬에이드.setBounds(20, 20, 150,270);
         //메뉴이름 띄어줄 텍스트 필드 생성
         JTextField 레몬에이드 = new JTextField("레몬에이드  3000원"); 
         Adepn.add(레몬에이드);
-        레몬에이드.setBounds(20,215,260,30);
+        레몬에이드.setBounds(20,290,150,20);
         레몬에이드.setEditable(false);
         AdeButton_레몬에이드.addActionListener(new ActionListener () {
                  
@@ -39,15 +39,13 @@ public class Ade {
 	}
 	
 	public void GrapeFruitAde(JPanel Adepn, JTextArea ordertxt) {
-		 ImageIcon icon_자몽에이드 = new ImageIcon("../images/자몽에이드.JPG");
-         JButton AdeButton_자몽에이드 = new JButton(CoffeeSystem.resizeIcon(icon_자몽에이드, 260, 195));
-         
+         JButton AdeButton_자몽에이드 = new JButton(new ImageIcon("images/자몽에이드.jpg"));        
          Adepn.add(AdeButton_자몽에이드);
-         AdeButton_자몽에이드.setBounds(280, 20, 259,194);
+         AdeButton_자몽에이드.setBounds(210, 20, 150, 270);
          //메뉴이름 띄어줄 텍스트 필드 생성
          JTextField 자몽에이드 = new JTextField("자몽에이드  3000원"); 
          Adepn.add(자몽에이드);
-         자몽에이드.setBounds(280,215,260,30);
+         자몽에이드.setBounds(210,290,150,20);
          자몽에이드.setEditable(false);
          AdeButton_자몽에이드.addActionListener(new ActionListener () {
                   

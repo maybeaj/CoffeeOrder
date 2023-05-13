@@ -18,13 +18,13 @@ public class Hot {
 public void HotAmericano(JPanel Hotpn, JTextArea ordertxt) {
 	  // Hotpn에 생성할 이지지 버튼들을 설정
     JButton HotButton_아메리카노 = new JButton("");
-    HotButton_아메리카노.setIcon(new ImageIcon("images/아메리카노.jfif"));
+    HotButton_아메리카노.setIcon(new ImageIcon("images/뜨아.jpg"));
     Hotpn.add(HotButton_아메리카노);
-    HotButton_아메리카노.setBounds(20, 20, 150,200);
+    HotButton_아메리카노.setBounds(20, 20, 150,270);
     //메뉴이름 띄어줄 텍스트 필드 생성
     JTextField hot_아메리카노 = new JTextField("(HOT)아메리카노  1500원"); 
     Hotpn.add(hot_아메리카노);
-    hot_아메리카노.setBounds(20,220,150,20);
+    hot_아메리카노.setBounds(20,290,150,20);
     hot_아메리카노.setEditable(false);
     
     // 아메리카노를 누르면 알림창이 뜨게끔 기능 설정
@@ -46,13 +46,13 @@ public void HotAmericano(JPanel Hotpn, JTextArea ordertxt) {
 
 public void HotCappucino(JPanel Hotpn, JTextArea ordertxt) {
 	JButton HotButton_카푸치노 = new JButton("");
-    HotButton_카푸치노.setIcon(new ImageIcon("../images/카푸치노.JFIF"));
+    HotButton_카푸치노.setIcon(new ImageIcon("images/뜨카.jpg"));
     Hotpn.add(HotButton_카푸치노);
-    HotButton_카푸치노.setBounds(210, 20, 150, 200);
+    HotButton_카푸치노.setBounds(210, 20, 150, 270);
     //메뉴이름 띄어줄 텍스트 필드 생성
-    JTextField 카푸치노 = new JTextField("(Hot)카푸치노  2000원"); 
+    JTextField 카푸치노 = new JTextField("(HOT)카푸치노  2000원"); 
     Hotpn.add(카푸치노);
-    카푸치노.setBounds(210,220,150,20);
+    카푸치노.setBounds(210,290,150,20);
     카푸치노.setEditable(false);
     // 카푸치노를 누르면 알림창이 뜨게끔 설정
     HotButton_카푸치노.addActionListener(new ActionListener () {               

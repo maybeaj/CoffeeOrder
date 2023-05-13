@@ -14,13 +14,13 @@ public class Ice {
 
 	public void IceAmericano(JPanel Icepn, JTextArea ordertxt){
 		JButton IceButton_아이스아메리카노 = new JButton("");                        
-        IceButton_아이스아메리카노.setIcon(new ImageIcon("../images/(ICE)아메리카노.JFIF"));
+        IceButton_아이스아메리카노.setIcon(new ImageIcon("images/아아.jpg"));
         Icepn.add(IceButton_아이스아메리카노);
-        IceButton_아이스아메리카노.setBounds(20, 20, 259,194);
+        IceButton_아이스아메리카노.setBounds(20, 20, 150,270);
         //메뉴이름 띄어줄 텍스트 필드 생성
         JTextField Ice_아메리카노 = new JTextField("(ICE)아메리카노  2000원"); 
         Icepn.add(Ice_아메리카노);
-        Ice_아메리카노.setBounds(20,215,260,30);
+        Ice_아메리카노.setBounds(20,290,150,20);
         Ice_아메리카노.setEditable(false);
         //버튼 기능 추가
         IceButton_아이스아메리카노.addActionListener(new ActionListener () {
@@ -42,14 +42,14 @@ public class Ice {
 	
 	public void IceCaffeLatte(JPanel Icepn, JTextArea ordertxt){
 		
-	    ImageIcon icon_아이스카페라떼 = new ImageIcon("../images/아이스카페라떼.jpg");                  
-        JButton IceButton_아이스카페라떼 = new JButton(CoffeeSystem.resizeIcon(icon_아이스카페라떼, 259, 194));            
+		JButton IceButton_아이스카페라떼 = new JButton("");                        
+        IceButton_아이스카페라떼.setIcon(new ImageIcon("images/아카.jpg"));           
         Icepn.add(IceButton_아이스카페라떼);
-        IceButton_아이스카페라떼.setBounds(280, 20, 259,194);
+        IceButton_아이스카페라떼.setBounds(210, 20, 150, 270);
         //메뉴이름 띄어줄 텍스트 필드 생성
         JTextField Ice_아이스카페라떼 = new JTextField("(ICE)카페라떼  2500원"); 
         Icepn.add(Ice_아이스카페라떼);
-        Ice_아이스카페라떼.setBounds(280,215,260,30);
+        Ice_아이스카페라떼.setBounds(210,290,150,20);
         Ice_아이스카페라떼.setEditable(false);
         //버튼 기능 추가
         IceButton_아이스카페라떼.addActionListener(new ActionListener () {
