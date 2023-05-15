@@ -63,15 +63,8 @@ public class CoffeeSystem {
 	}
 		return "     총 가격 :" + sum + "원";
 	}
-	 // 이미지 크기조절하기!
-	 static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
-	       Image img = icon.getImage();  
-	       Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  
-	       return new ImageIcon(resizedImage);
-	}
 	
-	 
-	 
+	  
 	private static void addToPrice(Integer new_Price) {
 		price.add(new_Price);
 		
@@ -106,7 +99,7 @@ public class CoffeeSystem {
 		CoffeeSystem.new_Ade_Drink("(ICE)레몬에이드", 3000);
 		CoffeeSystem.new_Ade_Drink("자몽에이드", 3000);
 		CoffeeSystem.new_Deasert("초코케이크 (1조각)", 3000);
-		CoffeeSystem.new_Deasert("딸기케이크 (1조각)", 3500);		
+		CoffeeSystem.new_Deasert("치즈케이크 (1조각)", 3500);		
 	}
 		
 	@SuppressWarnings("unused")
@@ -114,21 +107,6 @@ public class CoffeeSystem {
 		order.add(new_Hot_Drink);
 	}
 	
-
-	static String Customer_order() {
-		Menu m;
-		
-		System.out.println("\n--모든 주문 리스트 --");
-				
-		for(int i=0; i<CoffeeSystem.getNumOrders(); i++) {
-			m=CoffeeSystem.getOrder(i);
-			System.out.print(i+1+". ");
-			m.output();		
-			
-		}
-		return null;
-	
-	}
 	static Menu getOrder(int witch) {
 			
 		return order.elementAt(witch);
@@ -147,13 +125,16 @@ public class CoffeeSystem {
 		return price.get(witch);
 	}
 	
-	public static void main(String[] args) {//Test
-	
 
-		Customer_order();
-		price.get(1);
-	}
 
 	
 }
+/*이 코드는 CoffeeSystem이라는 클래스를 정의합니다.
+이 클래스에는 다양한 메뉴와 주문 정보를 저장하기 위한 여러 개의 정적 벡터(hot_drink, ice_drink, ade_drink, dessert, order, price)가 있습니다.
+Menu 클래스가 참조되지만 주어진 코드에서 해당 클래스의 코드는 제공되지 않았습니다.
+이 클래스에는 새로운 음료와 디저트를 생성하고(new_Hot_Drink, new_Ice_Drink, new_Ade_Drink, new_Deasert) 해당 벡터에 추가하는 메서드가 있습니다.
+new_Price 메서드는 새로운 가격을 생성하고 price 벡터에 추가하는 역할을 합니다.
+total_Price 메서드는 price 벡터에 저장된 가격들을 합산하여 총 가격을 계산합니다.
+setupMenu 메서드는 미리 정의된 음료와 디저트를 해당 벡터에 추가하여 메뉴를 초기화합니다.
+주문과 가격을 검색하기 위한 도우미 메서드(getOrder, getPrice, get_Price)와 주문과 가격의 개수를 얻기 위한 메서드(getNumOrders, getNumPrices)가 있습니다.*/
  

@@ -130,11 +130,7 @@ public class CoffeeSystemUsingGUI {
 	                    ordertxt.setVisible(true);
 	      
 	     }
-            
-       
-
     }
-        
      );
 
         //bt[0] 과 같은 형식임.
@@ -157,14 +153,9 @@ public class CoffeeSystemUsingGUI {
                    Dstpn.setVisible(false);
                    Orderpn.setVisible(false);
                    ordertxt.setVisible(true);
-     
-                
-            }
-
-        
-
-    }
-        
+         
+            }       
+    }        
      );
         
         bt[2].addActionListener(new ActionListener () {
@@ -205,7 +196,7 @@ public class CoffeeSystemUsingGUI {
                Dstpn.setBounds(0, 100, 600, 550);
                Dstpn.setBackground(Color.white);
                dst.ChocoCake(Dstpn, ordertxt);
-               dst.StrawBerryCake(Dstpn, ordertxt);
+               dst.CheeseCake(Dstpn, ordertxt);
                
                
                    Hotpn.setVisible(false);
