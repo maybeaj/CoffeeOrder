@@ -28,10 +28,10 @@ public class Dessert {
                  public void actionPerformed(ActionEvent e) {
                     JButton srcBtn =(JButton)e.getSource();
                      if(srcBtn==DstButton_ChocoCake) {
-                 int result=   JOptionPane.showConfirmDialog(DstButton_ChocoCake, "초코케이크를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                 int result=   JOptionPane.showConfirmDialog(DstButton_ChocoCake, "초코케이크를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                         if(result == JOptionPane.OK_OPTION) {
-                           ordertxt.append((CoffeeSystem.deasert.get(0).toString()));
-                           CoffeeSystem.order.add(CoffeeSystem.deasert.get(0));
+                           ordertxt.append((CoffeeSystem.dessert.get(0).toString()));
+                           CoffeeSystem.order.add(CoffeeSystem.dessert.get(0));
                            CoffeeSystem.new_Price(3000);
                         }
                     
@@ -55,10 +55,10 @@ public class Dessert {
                  public void actionPerformed(ActionEvent e) {
                     JButton srcBtn =(JButton)e.getSource();
                      if(srcBtn==DstButton_CheeseCake) {
-                 int result = JOptionPane.showConfirmDialog(DstButton_CheeseCake, "치즈케이크를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                 int result = JOptionPane.showConfirmDialog(DstButton_CheeseCake, "치즈케이크를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                         if(result == JOptionPane.OK_OPTION) {
-                           ordertxt.append((CoffeeSystem.deasert.get(1).toString()));
-                           CoffeeSystem.order.add(CoffeeSystem.deasert.get(1));
+                           ordertxt.append((CoffeeSystem.dessert.get(1).toString()));
+                           CoffeeSystem.order.add(CoffeeSystem.dessert.get(1));
                            CoffeeSystem.new_Price(3500);
                         }
                     

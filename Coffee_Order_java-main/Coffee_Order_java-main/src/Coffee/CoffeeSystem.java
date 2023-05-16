@@ -10,7 +10,7 @@ public class CoffeeSystem {
 	static Vector <Menu> hot_drink = new Vector<Menu>();
 	static Vector <Menu> ice_drink = new Vector<Menu>();
 	static Vector <Menu> ade_drink = new Vector<Menu>();
-	static Vector <Menu> deasert = new Vector<Menu>();
+	static Vector <Menu> dessert = new Vector<Menu>();
 	static Vector <Menu> order = new Vector<Menu>();
 	static Vector<Integer> price = new Vector<Integer>();
 	
@@ -39,11 +39,11 @@ public class CoffeeSystem {
 		
 	}
 	
-	static Menu new_Deasert(String product_name,int price) {
+	static Menu new_Dessert(String product_name,int price) {
 		
-		Menu new_Deasert = new Menu(product_name,price);
-		CoffeeSystem.addToDeasert(new_Deasert);				
-		return new_Deasert;
+		Menu new_Dessert = new Menu(product_name,price);
+		CoffeeSystem.addToDessert(new_Dessert);				
+		return new_Dessert;
 		
 	}
 	static Integer new_Price(int price) {
@@ -70,9 +70,9 @@ public class CoffeeSystem {
 		
 	}
 
-	private static void addToDeasert(Menu new_Deasert) {
+	private static void addToDessert(Menu new_Dessert) {
 		
-		deasert.add(new_Deasert);		
+		dessert.add(new_Dessert);		
 	}
 
 	private static void addToAdeDrink(Menu new_Ade_Drink) {
@@ -98,8 +98,8 @@ public class CoffeeSystem {
 		CoffeeSystem.new_Ice_Drink("(ICE)카페라떼", 2500);
 		CoffeeSystem.new_Ade_Drink("(ICE)레몬에이드", 3000);
 		CoffeeSystem.new_Ade_Drink("자몽에이드", 3000);
-		CoffeeSystem.new_Deasert("초코케이크 (1조각)", 3000);
-		CoffeeSystem.new_Deasert("치즈케이크 (1조각)", 3500);		
+		CoffeeSystem.new_Dessert("초코케이크 (1조각)", 3000);
+		CoffeeSystem.new_Dessert("치즈케이크 (1조각)", 3500);		
 	}
 		
 	@SuppressWarnings("unused")

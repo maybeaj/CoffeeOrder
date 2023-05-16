@@ -27,7 +27,7 @@ public class Ade {
                  public void actionPerformed(ActionEvent e) {
                     JButton srcBtn =(JButton)e.getSource();
                      if(srcBtn==AdeButton_LemonAde) {
-                 int result=   JOptionPane.showConfirmDialog(AdeButton_LemonAde, "레몬에이드를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                 int result=   JOptionPane.showConfirmDialog(AdeButton_LemonAde, "레몬에이드를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                         if(result == JOptionPane.OK_OPTION) {
                            ordertxt.append((CoffeeSystem.ade_drink.get(0).toString()));
                            CoffeeSystem.order.add(CoffeeSystem.ade_drink.get(0));
@@ -53,7 +53,7 @@ public class Ade {
                   public void actionPerformed(ActionEvent e) {
                      JButton srcBtn =(JButton)e.getSource();
                       if(srcBtn==AdeButton_GrapeFruitAde) {
-                  int result=   JOptionPane.showConfirmDialog(AdeButton_GrapeFruitAde, "자몽에이드를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                  int result=   JOptionPane.showConfirmDialog(AdeButton_GrapeFruitAde, "자몽에이드를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                          if(result == JOptionPane.OK_OPTION) {
                             ordertxt.append((CoffeeSystem.ade_drink.get(1).toString()));
                             CoffeeSystem.order.add(CoffeeSystem.ade_drink.get(1));

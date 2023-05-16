@@ -34,7 +34,7 @@ public void HotAmericano(JPanel Hotpn, JTextArea ordertxt) {
              public void actionPerformed(ActionEvent e) {
                 JButton srcBtn =(JButton)e.getSource();
                  if(srcBtn==HotButton_HotAmericano) {
-             int result=   JOptionPane.showConfirmDialog(HotButton_HotAmericano, "아메리카노를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+             int result=   JOptionPane.showConfirmDialog(HotButton_HotAmericano, "아메리카노를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                     if(result == JOptionPane.OK_OPTION) {
                        ordertxt.append((CoffeeSystem.hot_drink.get(0).toString()));
                        CoffeeSystem.order.add(CoffeeSystem.hot_drink.get(0));
@@ -60,7 +60,7 @@ public void HotCappucino(JPanel Hotpn, JTextArea ordertxt) {
           public void actionPerformed(ActionEvent e) {
              JButton srcBtn =(JButton)e.getSource();
               if(srcBtn==HotButton_HotCappucino) {
-                 int result = JOptionPane.showConfirmDialog(HotButton_HotCappucino, "카푸치노를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                 int result = JOptionPane.showConfirmDialog(HotButton_HotCappucino, "카푸치노를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                  if(result == JOptionPane.OK_OPTION) {
                     ordertxt.append((CoffeeSystem.hot_drink.get(1).toString()));
                     CoffeeSystem.order.add(CoffeeSystem.hot_drink.get(1));

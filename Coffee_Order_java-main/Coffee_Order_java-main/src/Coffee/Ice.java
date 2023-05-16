@@ -29,7 +29,7 @@ public class Ice {
               public void actionPerformed(ActionEvent e) {
                  JButton srcBtn =(JButton)e.getSource();
                   if(srcBtn==IceButton_IceAmericano) {
-                     int result = JOptionPane.showConfirmDialog(IceButton_IceAmericano, "아이스아메리카노를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                     int result = JOptionPane.showConfirmDialog(IceButton_IceAmericano, "아이스아메리카노를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                      if(result == JOptionPane.OK_OPTION) {
                         ordertxt.append((CoffeeSystem.ice_drink.get(0).toString()));
                         CoffeeSystem.order.add(CoffeeSystem.ice_drink.get(0));
@@ -58,7 +58,7 @@ public class Ice {
               public void actionPerformed(ActionEvent e) {
                  JButton srcBtn =(JButton)e.getSource();
                   if(srcBtn==IceButton_IceCaffeLatte) {
-                     int result = JOptionPane.showConfirmDialog(IceButton_IceCaffeLatte, "아이스 카페라떼를 주문하시겟습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
+                     int result = JOptionPane.showConfirmDialog(IceButton_IceCaffeLatte, "아이스 카페라떼를 주문하시겠습니까?", "주문확인",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE); 
                      if(result == JOptionPane.OK_OPTION) {
                         ordertxt.append((CoffeeSystem.ice_drink.get(1).toString()));
                         CoffeeSystem.order.add(CoffeeSystem.ice_drink.get(1));
