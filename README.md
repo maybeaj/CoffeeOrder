@@ -1,4 +1,4 @@
-# JavaProject
+# CoffeeOrder
 
 ![image](https://github.com/maybeaj/JavaProject/assets/112530022/dd8bbac9-95c0-43a4-a787-8c44f8c702cc)
 ![image](https://github.com/maybeaj/JavaProject/assets/112530022/6c59be85-cb97-4bdb-8255-8976364ec45e)
